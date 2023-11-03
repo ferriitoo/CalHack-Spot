@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Robot Control</title>
+    <link rel="stylesheet" type="text/css" href="../static/style.css">
+</head>
+<body>
+    <h1>Robot Control</h1>
+    <div>
+        <label for="command">Enter a command (w, a, d, s):</label>
+        <input type="text" id="command" placeholder="Enter a command" oninput="sendCommandOnChange()">
+    </div>
+    <div id="response"></div>
+
+    <h1>Audio Recorder</h1>
+    <div>
+        <button id="recordButton" onclick="toggleRecording()">
+            <span id="recordIcon" class="icon-record"></span>
+            <span id="recordText">Record</span>
+        </button>
+        <audio controls id="audioPlayer" style="display: none;"></audio>
+        <button id="stopButton" onclick="stopRecording()" disabled>Stop</button>
+        <button id="sendButton" onclick="sendAudioToBackend()" disabled>Send to Backend</button>
+    </div>
+
+    <img id="bg" width=1200px height=900px src="{{ url_for('video_feed') }}">
+
+    <script src="../static/script.js"></script>
+
+</body>
+</html>
+
+
+
+

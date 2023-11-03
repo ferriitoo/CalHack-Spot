@@ -1,0 +1,4 @@
+pip install opencv-python
+pip install mediapipe
+pip install deepface
+pip install flask
